@@ -1,0 +1,10 @@
+version: '3'
+services:
+  namecheap-ddns:
+    container_name: namecheap-ddns
+    image: registry.leibetseder.io/namecheap-ddns:1.0.0
+    restart: unless-stopped
+    environment:
+      - NC_HOST=${SUBDOMAIN}
+      - NC_DOMAIN=${DOMAIN}
+      - NC_PASS=${API_TOKEN}
